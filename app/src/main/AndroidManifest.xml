@@ -3,6 +3,9 @@
     package="com.rhysma.feedback.feedbackhq">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -31,6 +34,42 @@
         </activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+
+        <!-- The following services and receivers are used to deal with transfer of
+        files. If you copy and paste the user data storage or app content delivery
+        feature from this sample app into your own app, make sure you include
+        these items, and customize the string identifiers they use in the strings
+        XML resource file. -->
+
+        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
+
+        <service android:name="mobile.downloader.service.DownloadService" />
+
+        <receiver android:name="mobile.downloader.service.NetworkStateListener"
+            android:exported="false"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="mobile.downloader.query.DownloadQueueProvider"
+            android:authorities="@string/download_queue_provider_authority"
+            android:enabled="true"
+            android:exported="false">
+        </provider>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/content_file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/content_delivery_paths" />
+        </provider>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
