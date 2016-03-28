@@ -59,4 +59,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    //method that launches the Give New Feedback Activity
+    //called when the user clicks the giveFeedback button
+    public void startGiveFeedback(View view)
+    {
+        Intent intent = new Intent(this, GiveFeedbackActivity.class);
+        startActivity(intent);
+    }
 }

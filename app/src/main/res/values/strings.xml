@@ -6,11 +6,13 @@
     <string name="reviewSession">Review Session Feedback</string>
     <string name="joinSession">Give Feedback</string>
     <string name="welcomeNS">Create a new Session</string>
+    <string name="welcomeGF">Give Session Feedback</string>
     <string name="title_activity_new_session">NewSessionActivity</string>
 
     <string name="content_file_provider_authority">com.feedbackHQ.fileprovider</string>
     <!-- Suffix after '-' must be the app package name as specified in the build.gradle file. This
          is used by the com.amazonaws.mobile.downloader.query.DownloadQueueProvider class. -->
     <string name="download_queue_provider_authority">mobile.downloader-com.amazon.mysampleapp</string>
+    <string name="title_activity_give_feedback">GiveFeedbackActivity</string>
 
 </resources>

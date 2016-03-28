@@ -14,7 +14,7 @@ import android.util.Log;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import mobile.AWSConfiguration;
+import com.rhysma.feedback.feedbackhq.AWSConfiguration;
 import mobile.util.ThreadUtils;
 
 import java.util.Date;

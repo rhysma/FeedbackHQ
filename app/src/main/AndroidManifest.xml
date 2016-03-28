@@ -32,24 +32,31 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rhysma.feedback.feedbackhq.MainActivity" />
         </activity>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
 
-        <!-- The following services and receivers are used to deal with transfer of
+
+        <!--
+        The following services and receivers are used to deal with transfer of
         files. If you copy and paste the user data storage or app content delivery
         feature from this sample app into your own app, make sure you include
         these items, and customize the string identifiers they use in the strings
-        XML resource file. -->
+        XML resource file.
+        -->
 
-        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
-
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
         <service android:name="mobile.downloader.service.DownloadService" />
 
-        <receiver android:name="mobile.downloader.service.NetworkStateListener"
-            android:exported="false"
-            android:enabled="false">
+        <receiver
+            android:name="mobile.downloader.service.NetworkStateListener"
+            android:enabled="false"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
@@ -57,9 +64,7 @@
             android:name="mobile.downloader.query.DownloadQueueProvider"
             android:authorities="@string/download_queue_provider_authority"
             android:enabled="true"
-            android:exported="false">
-        </provider>
-
+            android:exported="false"></provider>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="@string/content_file_provider_authority"
@@ -73,6 +78,16 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".GiveFeedbackActivity"
+            android:label="@string/title_activity_give_feedback"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rhysma.feedback.feedbackhq.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

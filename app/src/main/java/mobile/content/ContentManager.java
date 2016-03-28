@@ -13,7 +13,7 @@ import android.util.Log;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
-import mobile.AWSConfiguration;
+import com.rhysma.feedback.feedbackhq.AWSConfiguration;
 import mobile.user.IdentityManager;
 import mobile.util.StringFormatUtils;
 import mobile.util.ThreadUtils;
