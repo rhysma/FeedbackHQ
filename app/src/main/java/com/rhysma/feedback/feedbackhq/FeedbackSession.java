@@ -4,13 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Rhysma on 3/23/2016.
+ * Created by Tiffany on 3/23/2016.
  */
 public class FeedbackSession
 {
     private int sessionId;
     private String sessionType;
-    private SimpleDateFormat dateCreated;
+    private String dateCreated;
 
     public int getSessionId()
     {
@@ -37,15 +37,16 @@ public class FeedbackSession
 
     }
 
-    public SimpleDateFormat getDateCreated()
+    public String getDateCreated()
     {
         return dateCreated;
     }
 
     public void setDateCreated()
     {
-        Date d = new Date();
-        dateCreated = new SimpleDateFormat(d.toString());
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        dateCreated = sdf.format(date);
     }
 
     public String toString()
